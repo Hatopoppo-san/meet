@@ -91,6 +91,9 @@ module.exports.getAccessToken = async (event) => {
       //Respond with OAuth token
       return {
         statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(token),
       };
     })
@@ -111,8 +114,10 @@ module.exports.getCalendarEvents = async (event) => {
     redirect_uris[0]
   );
 
-  const accessToken = decodeURIComponent(`${event.pathParameters.accessToken}`);
-  oAuth2Client.setCredentials({ accessToken });
+  const access_token = decodeURIComponent(
+    `${event.pathParameters.access_token}`
+  );
+  oAuth2Client.setCredentials({ access_token });
 
   return new Promise((resolve, reject) => {
     calendar.events.list(
@@ -135,6 +140,9 @@ module.exports.getCalendarEvents = async (event) => {
     .then((results) => {
       return {
         statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify({ events: results.data.items }),
       };
     })
@@ -142,6 +150,9 @@ module.exports.getCalendarEvents = async (event) => {
       console.error(err);
       return {
         statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
         body: JSON.stringify(err),
       };
     });
