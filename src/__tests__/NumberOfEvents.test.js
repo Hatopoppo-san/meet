@@ -30,6 +30,4 @@ describe('<NumberOfEvents /> component', () => {
     );
     expect(NumberOfEventsWrapper.state('eventsPerPage')).toBe(10);
   });
-
-  test('show events based on number on the input', () => {});
 });

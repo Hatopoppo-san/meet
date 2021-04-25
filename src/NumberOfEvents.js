@@ -13,10 +13,11 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <input
-        type='text'
+        type='number'
+        min='0'
         className='number-of-events'
         value={this.state.eventsPerPage}
-        placeHolder={this.state.eventsPerPage}
+        placeholder={this.state.eventsPerPage}
         onChange={this.handleChange}
       />
     );
