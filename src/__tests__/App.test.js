@@ -91,4 +91,14 @@ describe('<App /> integration', () => {
     );
     expect(AppWrapper.state('numberOfEvents')).toBe(5);
   });
+
+  // test('check if numberOfEvents affects total number of events shown', async() => {
+  //   const AppWrapper = mount(<App />);
+  //   const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
+  //   const numberObject = { target: { value: 1 }};
+  //   NumberOfEventsWrapper.find('.eventsNumber').simulate(
+  //     'change',
+  //     numberObject
+  //   )
+  // })
 });
