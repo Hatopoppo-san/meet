@@ -1,3 +1,5 @@
+import './nprogress.css';
+
 import React, { Component } from 'react';
 import { extractLocations, getEvents } from './api';
 import './App.css';
@@ -14,7 +16,7 @@ class App extends Component {
   updateEvents = (location) => {
     getEvents().then((events) => {
       const locationEvents =
-        location == 'all'
+        location === 'all'
           ? events
           : events.filter((event) => event.location === location);
       this.setState({

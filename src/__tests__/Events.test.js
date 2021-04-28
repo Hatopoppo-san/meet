@@ -9,7 +9,7 @@ describe('<Event />Component', () => {
     EventWrapper = shallow(<Event event={mockData} />);
   });
   test('render collapsed event', () => {
-    expect(EventWrapper.find('.event-summery')).toHaveLength(1);
+    expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
   test('check if details is hidden in default', () => {

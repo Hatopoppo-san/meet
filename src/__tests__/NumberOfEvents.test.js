@@ -14,9 +14,7 @@ describe('<NumberOfEvents /> component', () => {
 
   test('renders text input correctly', () => {
     const eventPerPage = NumberOfEventsWrapper.state('eventsPerPage');
-    expect(NumberOfEventsWrapper.find('.number-of-events').prop('value')).toBe(
-      32
-    );
+    expect(NumberOfEventsWrapper.find('.eventsNumber').prop('value')).toBe(32);
   });
 
   test('change state when text input changes', () => {
@@ -24,10 +22,7 @@ describe('<NumberOfEvents /> component', () => {
       eventsPerPage: 5,
     });
     const eventObject = { target: { value: 10 } };
-    NumberOfEventsWrapper.find('.number-of-events').simulate(
-      'change',
-      eventObject
-    );
+    NumberOfEventsWrapper.find('.eventsNumber').simulate('change', eventObject);
     expect(NumberOfEventsWrapper.state('eventsPerPage')).toBe(10);
   });
 });

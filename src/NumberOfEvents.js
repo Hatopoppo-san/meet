@@ -12,14 +12,17 @@ class NumberOfEvents extends Component {
   };
   render() {
     return (
-      <input
-        type='number'
-        min='0'
-        className='number-of-events'
-        value={this.state.eventsPerPage}
-        placeholder={this.state.eventsPerPage}
-        onChange={this.handleChange}
-      />
+      <div className='number-of-events'>
+        <p>Number of events</p>
+        <input
+          type='number'
+          min='0'
+          className='eventsNumber'
+          value={this.state.eventsPerPage}
+          placeholder={this.state.eventsPerPage}
+          onChange={this.handleChange}
+        />
+      </div>
     );
   }
 }
