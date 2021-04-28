@@ -12,12 +12,11 @@ class Event extends Component {
   };
   render() {
     const { event } = this.props;
-    console.log(this.state);
     return (
       <div>
-        <h2 className='event-summery'>{event.summery}</h2>
-        <p className='event-time'>{event.time}</p>
-        <p className='event-summery-at'>{event.organizer}</p>
+        <h2 className='event-summary'>{event.summary}</h2>
+        <p className='event-time'>{event.start.dateTime}</p>
+        <p className='event-summery-at'>{event.organizer?.email}</p>
         <p className='event-location'>{event.location}</p>
         {this.state.isEventDetailsShown ? (
           <div className='hidden-details'>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getEvents } from './api';
+import { extractLocations, getEvents } from './api';
 import './App.css';
 import CitySearch from './CitySearch';
 import EventList from './EventList';
@@ -13,14 +13,28 @@ class App extends Component {
 
   updateEvents = (location) => {
     getEvents().then((events) => {
-      const locationEvents = events.filter(
-        (event) => event.location === location
-      );
+      const locationEvents =
+        location == 'all'
+          ? events
+          : events.filter((event) => event.location === location);
       this.setState({
         events: locationEvents,
       });
     });
   };
+
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
 
   render() {
     return (
