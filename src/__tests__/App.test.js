@@ -100,5 +100,6 @@ describe('<App /> integration', () => {
   //     'change',
   //     numberObject
   //   )
+
   // })
 });
