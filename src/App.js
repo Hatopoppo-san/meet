@@ -15,8 +15,8 @@ class App extends Component {
   };
 
   updateEvents = (location, eventCount) => {
-    eventCount = this.state.numberOfEvents;
     getEvents().then((events) => {
+      eventCount = this.state.numberOfEvents;
       const locationEvents =
         location === 'all'
           ? events
@@ -32,6 +32,7 @@ class App extends Component {
   handleChange = (event) => {
     this.setState({
       numberOfEvents: event.target.value,
+      events: this.state.events.slice(0, this.state.numberOfEvents + 1),
     });
   };
 

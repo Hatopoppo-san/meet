@@ -51,6 +51,78 @@ const mockData = [
       "timeZone": "Europe/Berlin"
      },
   },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187221858184000\"",
+    "id": "3gi3kabkm3bua5lq3jhscc8s4c",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2dpM2thYmttM2J1YTVscTNqaHNjYzhzNGNfMjAyMDA2MjlUMjAwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:23:24.000Z",
+    "updated": "2020-07-01T13:42:09.092Z",
+    "summary": "Intro to AngularJS-Remote",
+    "description": "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. Join us to get introduced to this wonderful framework and dive deep into its features. ",
+    "location": "New York, NY, USA",
+    "creator": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "organizer": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "start": {
+     "dateTime": "2020-06-29T22:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    }
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187222416180000\"",
+    "id": "6co0ojl0l0j0rbh3g56vlc2s9i",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NmNvMG9qbDBsMGowcmJoM2c1NnZsYzJzOWlfMjAyMDA3MDFUMDEwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T13:44:15.000Z",
+    "updated": "2020-07-01T13:46:48.090Z",
+    "summary": "React California",
+    "description": "React is one of the most popular front-end frameworks. There is a huge number of job openings for React developers in most cities. \n\nReact California is a non-profit organization offering free training sessions to React enthusiasts every Wednesday and Friday.\n\nJoin us in our free React training sessions and give your career a new direction.",
+    "location": "California, USA",
+    "creator": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "organizer": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "start": {
+     "dateTime": "2020-07-01T03:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    }
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187224991890000\"",
+    "id": "3glt4dve9uip7oh5g5kb2bid2s",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2dsdDRkdmU5dWlwN29oNWc1a2IyYmlkMnNfMjAyMDA3MDJUMTYwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T14:07:59.000Z",
+    "updated": "2020-07-01T14:08:15.945Z",
+    "summary": "Fun with Node.js",
+    "description": "Do you know that Node.js is basically a server having the capability of executing JavaScript? If you are familiar with JS, Node.js will be an easy ride. \n\nJoin us if you want to learn how to build the server-side of an app using Node.js.",
+    "location": "Nairobi, Kenya",
+    "creator": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "organizer": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "start": {
+     "dateTime": "2020-07-02T18:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    }
+  }
 ];
 
 export { mockData };
