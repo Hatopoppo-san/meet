@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 
 class NumberOfEvents extends Component {
-  state = {
-    eventsPerPage: 32,
-  };
-
-  handleChange = (event) => {
-    this.setState({
-      eventsPerPage: event.target.value,
-    });
-  };
   render() {
+    const { numberOfEvents } = this.props;
     return (
       <div className='number-of-events'>
         <p>Number of events</p>
@@ -18,9 +10,9 @@ class NumberOfEvents extends Component {
           type='number'
           min='0'
           className='eventsNumber'
-          value={this.state.eventsPerPage}
-          placeholder={this.state.eventsPerPage}
-          onChange={this.handleChange}
+          value={numberOfEvents}
+          placeholder={numberOfEvents}
+          onChange={this.props.handleChange}
         />
       </div>
     );
