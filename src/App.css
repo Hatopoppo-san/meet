@@ -2,6 +2,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  color: darkslategray;
 }
 
 .App * {
@@ -83,6 +84,20 @@ input[type='number'] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  background: rgba(255, 235, 205, 0.7); /*blanchedalmond*/
+}
+
+.eventList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em;
+}
+@media only screen and (max-width: 768px) {
+  .eventList {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
 }
 
 .show-details-btn,
@@ -94,6 +109,18 @@ input[type='number'] {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  background-color: azure;
+  border: solid 1px darkgray;
+  font-family: 'Overpass', sans-serif;
+}
+
+button:hover {
+  border: solid 1px dimgray;
+}
+
+button:active {
+  border: solid 1px dimgray;
+  background: lightblue;
 }
 
 .name {

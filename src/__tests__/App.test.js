@@ -90,15 +90,29 @@ describe('<App /> integration', () => {
       numberObject
     );
     expect(AppWrapper.state('numberOfEvents')).toBe(5);
+    AppWrapper.unmount();
   });
 
-  // test('check if numberOfEvents affects total number of events shown', async() => {
-  //   const AppWrapper = mount(<App />);
-  //   const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-  //   const numberObject = { target: { value: 1 }};
-  //   NumberOfEventsWrapper.find('.eventsNumber').simulate(
-  //     'change',
-  //     numberObject
-  //   )
-  // })
+  test('check if numberOfEvents affects number of events shown', async () => {
+    const AppWrapper = mount(<App />);
+    AppWrapper.setState({ numberOfEvents: 1 });
+    const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
+    await suggestionItems.at(suggestionItems.length - 1).simulate('click');
+    expect(AppWrapper.state('events')).toHaveLength(1);
+    AppWrapper.unmount();
+  });
+
+  test('check if numberOfEvents affects number of events shown chosen by city', async () => {
+    const AppWrapper = mount(<App />);
+    AppWrapper.setState({ numberOfEvents: 0 });
+    const CitySearchWrapper = AppWrapper.find(CitySearch);
+    const locations = extractLocations(mockData);
+    CitySearchWrapper.setState({ suggestions: locations });
+    const suggestions = CitySearchWrapper.state('suggestions');
+    const selectedIndex = Math.floor(Math.random() * suggestions.length);
+    const selectedCity = suggestions[selectedIndex];
+    await CitySearchWrapper.instance().handleItemClicked(selectedCity);
+    expect(AppWrapper.state('events')).toHaveLength(0);
+    AppWrapper.unmount();
+  });
 });

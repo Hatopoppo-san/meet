@@ -53,30 +53,6 @@ const mockData = [
   },
   {
     "kind": "calendar#event",
-    "etag": "\"3187221506816000\"",
-    "id": "48m09le389vijbqfs2mcr6i87q",
-    "status": "confirmed",
-    "htmlLink": "https://www.google.com/calendar/event?eid=NDhtMDlsZTM4OXZpamJxZnMybWNyNmk4N3FfMjAyMDA2MzBUMDcwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
-    "created": "2020-07-01T13:39:01.000Z",
-    "updated": "2020-07-01T13:39:13.408Z",
-    "summary": "Node Gang",
-    "description": "We meet every Tuesday to talk about Node or JavaScript in general. Node Gang is an inclusive community that tries to cater to all levels of learners during meetups. Join us if you are curious to hear about what's new in Node, patterns, interesting npm packages, and practices.",
-    "location": "Sydney NSW, Australia",
-    "creator": {
-     "email": "fullstackwebdev@careerfoundry.com",
-     "self": true
-    },
-    "organizer": {
-     "email": "fullstackwebdev@careerfoundry.com",
-     "self": true
-    },
-    "start": {
-     "dateTime": "2020-06-30T09:00:00+02:00",
-     "timeZone": "Europe/Berlin"
-    }
-  },
-  {
-    "kind": "calendar#event",
     "etag": "\"3187221858184000\"",
     "id": "3gi3kabkm3bua5lq3jhscc8s4c",
     "status": "confirmed",
@@ -120,6 +96,30 @@ const mockData = [
     },
     "start": {
      "dateTime": "2020-07-01T03:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    }
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187224991890000\"",
+    "id": "3glt4dve9uip7oh5g5kb2bid2s",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2dsdDRkdmU5dWlwN29oNWc1a2IyYmlkMnNfMjAyMDA3MDJUMTYwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T14:07:59.000Z",
+    "updated": "2020-07-01T14:08:15.945Z",
+    "summary": "Fun with Node.js",
+    "description": "Do you know that Node.js is basically a server having the capability of executing JavaScript? If you are familiar with JS, Node.js will be an easy ride. \n\nJoin us if you want to learn how to build the server-side of an app using Node.js.",
+    "location": "Nairobi, Kenya",
+    "creator": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "organizer": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "start": {
+     "dateTime": "2020-07-02T18:00:00+02:00",
      "timeZone": "Europe/Berlin"
     }
   }
