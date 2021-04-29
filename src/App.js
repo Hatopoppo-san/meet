@@ -24,7 +24,6 @@ class App extends Component {
       this.setState({
         events: locationEvents.slice(0, eventCount),
       });
-      console.log(this.state.events);
     });
   };
 
