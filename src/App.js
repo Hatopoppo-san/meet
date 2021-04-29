@@ -21,9 +21,8 @@ class App extends Component {
         location === 'all'
           ? events
           : events.filter((event) => event.location === location);
-      const updatedNumberOfEvents = locationEvents.slice(0, eventCount);
       this.setState({
-        events: updatedNumberOfEvents,
+        events: locationEvents.slice(0, eventCount),
       });
       console.log(this.state.events);
     });
@@ -32,7 +31,6 @@ class App extends Component {
   handleChange = (event) => {
     this.setState({
       numberOfEvents: event.target.value,
-      events: this.state.events.slice(0, this.state.numberOfEvents + 1),
     });
   };
 
