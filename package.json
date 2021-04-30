@@ -2,7 +2,7 @@
   "name": "meet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Hatopoppo-san.github.io/meet",
+  "homepage": "https://imatsuhira.github.io/meet",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -70,7 +70,7 @@
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version":
     ]
   },
   "devDependencies": {
@@ -86,11 +86,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hatopoppo-san/meet.git"
+    "url": "git+https://github.com/imatsuhira/meet.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hatopoppo-san/meet/issues"
+    "url": "https://github.com/imatsuhira/meet/issues"
   }
 }
