@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   render() {
-    const { numberOfEvents } = this.props;
+    const { numberOfEvents, errorText } = this.props;
     return (
       <div className='number-of-events'>
         <p>Number of events</p>
         <input
-          type='number'
-          min='0'
+          type='text'
           className='eventsNumber'
           value={numberOfEvents}
           placeholder={numberOfEvents}
           onChange={this.props.handleChange}
         />
+        <ErrorAlert text={errorText} />
       </div>
     );
   }

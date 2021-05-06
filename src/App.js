@@ -12,6 +12,7 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    errorText: '',
   };
 
   updateEvents = (location, eventCount) => {
@@ -28,9 +29,17 @@ class App extends Component {
   };
 
   handleChange = (event) => {
-    this.setState({
-      numberOfEvents: event.target.value,
-    });
+    if (event.target.value <= 32 && event.target.value >= 1) {
+      this.setState({
+        numberOfEvents: event.target.value,
+        errorText: '',
+      });
+    } else {
+      return this.setState({
+        numberOfEvents: event.target.value,
+        errorText: 'Please select number from 1 to 32',
+      });
+    }
   };
 
   componentDidMount() {
@@ -56,6 +65,7 @@ class App extends Component {
         <NumberOfEvents
           numberOfEvents={this.state.numberOfEvents}
           handleChange={this.handleChange}
+          errorText={this.state.errorText}
         />
         <EventList events={this.state.events} />
       </div>

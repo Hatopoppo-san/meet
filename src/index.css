@@ -6,9 +6,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./images/nathan-dumlao-6VhPY27jdps-unsplash.jpg');
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
 code {
