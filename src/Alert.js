@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// Practice of OOP(Object oriented programing)
+
 class Alert extends Component {
   constructor(props) {
     super(props);
