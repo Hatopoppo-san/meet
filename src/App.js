@@ -1,6 +1,14 @@
 import './nprogress.css';
 
 import React, { Component } from 'react';
+import {
+  ScatterChart,
+  Scatter,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from 'recharts';
 import { extractLocations, getEvents } from './api';
 import './App.css';
 import CitySearch from './CitySearch';
@@ -13,6 +21,17 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
     errorText: '',
+  };
+
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location)
+        .length;
+      const city = location.split(' ').shift();
+      return { city, number };
+    });
+    return data;
   };
 
   updateEvents = (location, eventCount) => {
@@ -56,18 +75,36 @@ class App extends Component {
   }
 
   render() {
+    const { locations, numberOfEvents, errorText, events } = this.state;
     return (
       <div className='App'>
-        <CitySearch
-          locations={this.state.locations}
-          updateEvents={this.updateEvents}
-        />
+        <h1 id='main-logo'>Meet App</h1>
+        <h4>Choose your nearest city</h4>
+        <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents
-          numberOfEvents={this.state.numberOfEvents}
+          numberOfEvents={numberOfEvents}
           handleChange={this.handleChange}
-          errorText={this.state.errorText}
+          errorText={errorText}
         />
-        <EventList events={this.state.events} />
+        <h3>Events in each city</h3>
+
+        <ScatterChart
+          className='chart'
+          width={800}
+          height={400}
+          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+          <CartesianGrid />
+          <XAxis type='category' dataKey='city' name='city' />
+          <YAxis
+            type='number'
+            dataKey='number'
+            name='number of events'
+            allowDecimals={false}
+          />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Scatter name='A school' data={this.getData()} fill='#8884d8' />
+        </ScatterChart>
+        <EventList events={events} />
       </div>
     );
   }
