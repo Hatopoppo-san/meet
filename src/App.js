@@ -62,10 +62,6 @@ class App extends Component {
     }
   };
 
-  // handleClickOutside(event){
-  //   if()
-  // }
-
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
