@@ -8,6 +8,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ResponsiveContainer,
 } from 'recharts';
 import { extractLocations, getEvents } from './api';
 import './App.css';
@@ -61,6 +62,10 @@ class App extends Component {
     }
   };
 
+  // handleClickOutside(event){
+  //   if()
+  // }
+
   componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
@@ -88,22 +93,22 @@ class App extends Component {
         />
         <h3>Events in each city</h3>
 
-        <ScatterChart
-          className='chart'
-          width={800}
-          height={400}
-          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-          <CartesianGrid />
-          <XAxis type='category' dataKey='city' name='city' />
-          <YAxis
-            type='number'
-            dataKey='number'
-            name='number of events'
-            allowDecimals={false}
-          />
-          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter name='A school' data={this.getData()} fill='#8884d8' />
-        </ScatterChart>
+        <ResponsiveContainer height={400}>
+          <ScatterChart
+            className='chart'
+            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <CartesianGrid />
+            <XAxis type='category' dataKey='city' name='city' />
+            <YAxis
+              type='number'
+              dataKey='number'
+              name='number of events'
+              allowDecimals={false}
+            />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter name='A school' data={this.getData()} fill='#8884d8' />
+          </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={events} />
       </div>
     );
