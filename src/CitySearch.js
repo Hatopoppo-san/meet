@@ -2,11 +2,36 @@ import React, { Component } from 'react';
 import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
-  state = {
-    query: '',
-    suggestions: [],
-    showSuggestions: undefined,
+  constructor(props) {
+    super(props);
+    this.myRef = React.createRef();
+    this.state = {
+      query: '',
+      suggestions: [],
+      showSuggestions: undefined,
+    };
+  }
+  // If you click outside the suggestion, suggestion will close
+  handleOutsideClick = (e) => {
+    if (this.myRef.current.contains(e.target)) {
+      return;
+    }
+    if (!this.myRef.current.contains(e.target)) {
+      this.setState({
+        showSuggestions: false,
+      });
+    }
   };
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleOutsideClick);
+  }
+
+  componentWillUnmount() {
+    return () => {
+      document.removeEventListener('mousedown', this.handleOutsideClick);
+    };
+  }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
@@ -54,20 +79,22 @@ class CitySearch extends Component {
             this.setState({ showSuggestions: true });
           }}
         />
-        <ul
-          className='suggestions'
-          style={this.state.showSuggestions ? {} : { display: 'none' }}>
-          {this.state.suggestions.map((suggestion) => (
-            <li
-              key={suggestion}
-              onClick={() => this.handleItemClicked(suggestion)}>
-              {suggestion}
+        <div ref={this.myRef}>
+          <ul
+            className='suggestions'
+            style={this.state.showSuggestions ? {} : { display: 'none' }}>
+            {this.state.suggestions.map((suggestion) => (
+              <li
+                key={suggestion}
+                onClick={() => this.handleItemClicked(suggestion)}>
+                {suggestion}
+              </li>
+            ))}
+            <li onClick={() => this.handleItemClicked('all')} key='all'>
+              <b>See all cities</b>
             </li>
-          ))}
-          <li onClick={() => this.handleItemClicked('all')} key='all'>
-            <b>See all cities</b>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
     );
   }

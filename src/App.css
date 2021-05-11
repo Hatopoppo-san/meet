@@ -19,7 +19,7 @@ p {
 }
 
 h4,
-h3 {
+.events-in-each-city {
   color: ghostwhite;
 }
 
@@ -69,6 +69,7 @@ input[type='number'] {
   z-index: 2;
   align-self: center;
   margin-top: 45px;
+  margin-left: 25px;
   top: 43px;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);

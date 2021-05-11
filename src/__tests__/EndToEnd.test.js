@@ -84,24 +84,24 @@ describe('Filter events by city', () => {
     browser.close();
   });
 
-  test('User can select a city from the suggested list.', async () => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto('http://localhost:3000/');
-    await page.focus('.city');
-    await page.keyboard.type('Berlin');
-    await page.waitForSelector('.suggestions li');
-    const listItems = await page.$$('.suggestions li');
-    for (let item of listItems) {
-      if (await item.evaluate((node) => node.innerText === 'Berlin')) {
-        item.click();
-        console.log('clicking');
-      }
-    }
-    const event = await page.$('.event');
-    const node = await event.evaluate((node) => node);
-    console.log(event);
-    // expect(page.$('.event').locations).toBe('Berlin, Germany');
-    browser.close();
-  });
+  // test('User can select a city from the suggested list.', async () => {
+  //   const browser = await puppeteer.launch();
+  //   const page = await browser.newPage();
+  //   await page.goto('http://localhost:3000/');
+  //   await page.focus('.city');
+  //   await page.keyboard.type('Berlin');
+  //   await page.waitForSelector('.suggestions li');
+  //   const listItems = await page.$$('.suggestions li');
+  //   for (let item of listItems) {
+  //     if (await item.evaluate((node) => node.innerText === 'Berlin')) {
+  //       item.click();
+  //       console.log('clicking');
+  //     }
+  //   }
+  //   const event = await page.$('.event');
+  //   const node = await event.evaluate((node) => node);
+  //   console.log(event);
+  //   // expect(page.$('.event').locations).toBe('Berlin, Germany');
+  //   browser.close();
+  //});
 });

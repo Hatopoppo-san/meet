@@ -87,7 +87,7 @@ class App extends Component {
           handleChange={this.handleChange}
           errorText={errorText}
         />
-        <h3>Events in each city</h3>
+        <h3 className='events-in-each-city'>Events in each city</h3>
 
         <ResponsiveContainer height={400}>
           <ScatterChart
