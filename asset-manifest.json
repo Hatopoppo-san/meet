@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/meet/static/css/main.b63795d4.chunk.css",
-    "main.js": "/meet/static/js/main.6a63ce90.chunk.js",
-    "main.js.map": "/meet/static/js/main.6a63ce90.chunk.js.map",
+    "main.css": "/meet/static/css/main.53060d5c.chunk.css",
+    "main.js": "/meet/static/js/main.d32f4897.chunk.js",
+    "main.js.map": "/meet/static/js/main.d32f4897.chunk.js.map",
     "runtime-main.js": "/meet/static/js/runtime-main.4c0b6c41.js",
     "runtime-main.js.map": "/meet/static/js/runtime-main.4c0b6c41.js.map",
     "static/js/2.563831fa.chunk.js": "/meet/static/js/2.563831fa.chunk.js",
@@ -12,14 +12,14 @@
     "index.html": "/meet/index.html",
     "service-worker.js": "/meet/service-worker.js",
     "service-worker.js.map": "/meet/service-worker.js.map",
-    "static/css/main.b63795d4.chunk.css.map": "/meet/static/css/main.b63795d4.chunk.css.map",
+    "static/css/main.53060d5c.chunk.css.map": "/meet/static/css/main.53060d5c.chunk.css.map",
     "static/js/2.563831fa.chunk.js.LICENSE.txt": "/meet/static/js/2.563831fa.chunk.js.LICENSE.txt",
     "static/media/index.css": "/meet/static/media/nathan-dumlao-6VhPY27jdps-unsplash.d66cf7f8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.4c0b6c41.js",
     "static/js/2.563831fa.chunk.js",
-    "static/css/main.b63795d4.chunk.css",
-    "static/js/main.6a63ce90.chunk.js"
+    "static/css/main.53060d5c.chunk.css",
+    "static/js/main.d32f4897.chunk.js"
   ]
 }
