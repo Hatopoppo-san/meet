@@ -15,6 +15,7 @@ import './App.css';
 import CitySearch from './CitySearch';
 import EventList from './EventList';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 
 class App extends Component {
   state = {
@@ -88,23 +89,25 @@ class App extends Component {
           errorText={errorText}
         />
         <h3 className='events-in-each-city'>Events in each city</h3>
-
-        <ResponsiveContainer height={400}>
-          <ScatterChart
-            className='chart'
-            margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-            <CartesianGrid />
-            <XAxis type='category' dataKey='city' name='city' />
-            <YAxis
-              type='number'
-              dataKey='number'
-              name='number of events'
-              allowDecimals={false}
-            />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter name='A school' data={this.getData()} fill='#8884d8' />
-          </ScatterChart>
-        </ResponsiveContainer>
+        <div className='data-vis-wrapper'>
+          <EventGenre events={events} />
+          <ResponsiveContainer height={400}>
+            <ScatterChart
+              className='chart'
+              margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+              <CartesianGrid />
+              <XAxis type='category' dataKey='city' name='city' />
+              <YAxis
+                type='number'
+                dataKey='number'
+                name='number of events'
+                allowDecimals={false}
+              />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter name='A school' data={this.getData()} fill='#8884d8' />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
         <EventList events={events} />
       </div>
     );

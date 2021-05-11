@@ -122,7 +122,75 @@ const mockData = [
      "dateTime": "2020-07-02T18:00:00+02:00",
      "timeZone": "Europe/Berlin"
     }
-  }
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3187231386852000\"",
+    "id": "7qqm95l3op6khilck5cprvbq2u",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=N3FxbTk1bDNvcDZraGlsY2s1Y3BydmJxMnVfMjAyMDA3MDFUMTQwMDAwWiBmdWxsc3RhY2t3ZWJkZXZAY2FyZWVyZm91bmRyeS5jb20",
+    "created": "2020-07-01T15:00:58.000Z",
+    "updated": "2020-07-01T15:01:33.426Z",
+    "summary": "Fun with Angular",
+    "description": "Developed by Google, AngularJS is a relatively new JavaScript, and it is designed to make front-end development as easy as possible for you. \n\nJoin us to get introduced to this wonderful framework and dive deep into its features. ",
+    "location": "Dubai - United Arab Emirates",
+    "creator": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "organizer": {
+     "email": "fullstackwebdev@careerfoundry.com",
+     "self": true
+    },
+    "start": {
+     "dateTime": "2020-07-01T16:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    },
+    "end": {
+     "dateTime": "2020-07-01T17:00:00+02:00",
+     "timeZone": "Europe/Berlin"
+    },
+    "recurrence": [
+     "RRULE:FREQ=WEEKLY;WKST=SU;BYDAY=SU,WE"
+    ],
+    "iCalUID": "7qqm95l3op6khilck5cprvbq2u@google.com",
+    "sequence": 1,
+    "hangoutLink": "https://meet.google.com/bim-zvvi-nio",
+    "conferenceData": {
+     "entryPoints": [
+      {
+       "entryPointType": "video",
+       "uri": "https://meet.google.com/bim-zvvi-nio",
+       "label": "meet.google.com/bim-zvvi-nio"
+      },
+      {
+       "entryPointType": "more",
+       "uri": "https://tel.meet/bim-zvvi-nio?pin=8340594476418",
+       "pin": "8340594476418"
+      },
+      {
+       "regionCode": "DE",
+       "entryPointType": "phone",
+       "uri": "tel:+49-40-8081617267",
+       "label": "+49 40 8081617267",
+       "pin": "692195842"
+      }
+     ],
+     "conferenceSolution": {
+      "key": {
+       "type": "hangoutsMeet"
+      },
+      "name": "Google Meet",
+      "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+     },
+     "conferenceId": "bim-zvvi-nio",
+     "signature": "ACn9hYGQrbnSFWd4ppMehjc6PgTF"
+    },
+    "reminders": {
+     "useDefault": true
+    },
+    "eventType": "default"
+   }
 ];
 
 export { mockData };
