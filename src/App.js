@@ -88,7 +88,6 @@ class App extends Component {
           handleChange={this.handleChange}
           errorText={errorText}
         />
-        <h3 className='events-in-each-city'>Events in each city</h3>
         <div className='data-vis-wrapper'>
           <EventGenre events={events} />
           <ResponsiveContainer height={400}>

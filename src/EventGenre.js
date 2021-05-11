@@ -10,33 +10,42 @@ const EventGenre = ({ events }) => {
   }, [events]);
 
   const getData = () => {
-    const genres = ['React', 'JavaScript', 'Node.js', 'Jquery', 'AngularJS'];
+    const genres = ['React', 'JavaScript', 'Node', 'JQuery', 'Angular'];
     const data = genres.map((genre) => {
       const value = events.filter(({ summary }) => {
-        const summaryArray = summary.split(' ');
-        return summaryArray.includes(genre);
+        return summary.split(' ').includes(genre);
       }).length;
       return { name: genre, value };
     });
     return data;
   };
 
+  const colors = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'];
+
   return (
     // There are three kinds of Angular(AngularJs, Angular, AngularJS-Remote).
     // Search the way of those as 'AngularJS'
-    <ResponsiveContainer height={400}>
+    <ResponsiveContainer className='pie-chart' height={400}>
       <PieChart width={400} height={400}>
         <Pie
           data={data}
-          cx={200}
-          cy={200}
+          cx={'50%'}
+          cy={'50%'}
           labelLine={false}
           outerRadius={80}
           fill='#8884d8'
           dataKey='value'
           label={({ name, percent }) => {
             return `${name} ${(percent * 100).toFixed(0)}%`;
-          }}></Pie>
+          }}>
+          {data.map((entry, index) => (
+            <Cell
+              key={`cell-${index}`}
+              fill={colors[index]}
+              name={entry.name}
+            />
+          ))}
+        </Pie>
       </PieChart>
     </ResponsiveContainer>
   );

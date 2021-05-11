@@ -254,7 +254,8 @@ button:active {
   }
 }
 
-.chart {
+.chart,
+.pie-chart {
   margin: auto;
   background: rgba(255, 235, 205, 0.7);
   border-radius: 5%;
