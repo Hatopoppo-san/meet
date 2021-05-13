@@ -11,12 +11,16 @@ const EventGenre = ({ events }) => {
 
   const getData = () => {
     const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
-    const data = genres.map((genre) => {
-      const value = events.filter(({ summary }) => {
-        return summary.split(' ').includes(genre);
-      }).length;
-      return { name: genre, value };
-    });
+    const data = genres
+      .map((genre) => {
+        const value = events.filter(({ summary }) => {
+          return summary.toLowerCase().includes(genre.toLowerCase());
+        }).length;
+        if (value > 0) {
+          return { name: genre, value };
+        }
+      })
+      .filter((element) => element);
     return data;
   };
 
