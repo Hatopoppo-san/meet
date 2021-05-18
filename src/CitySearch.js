@@ -11,17 +11,6 @@ class CitySearch extends Component {
       showSuggestions: undefined,
     };
   }
-  // If you click outside the suggestion, suggestion will close
-  handleOutsideClick = (e) => {
-    if (this.myRef.current.contains(e.target)) {
-      return;
-    }
-    if (!this.myRef.current.contains(e.target)) {
-      this.setState({
-        showSuggestions: false,
-      });
-    }
-  };
 
   componentDidMount() {
     document.addEventListener('mousedown', this.handleOutsideClick);
@@ -63,6 +52,18 @@ class CitySearch extends Component {
     });
 
     this.props.updateEvents(suggestion);
+  };
+
+  // If you click outside the suggestion, suggestion will close
+  handleOutsideClick = (e) => {
+    if (this.myRef.current.contains(e.target)) {
+      return;
+    }
+    if (!this.myRef.current.contains(e.target)) {
+      this.setState({
+        showSuggestions: false,
+      });
+    }
   };
 
   render() {

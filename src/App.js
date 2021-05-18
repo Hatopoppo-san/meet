@@ -28,8 +28,9 @@ class App extends Component {
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location)
-        .length;
+      const number = events.filter(
+        (event) => event.location === location
+      ).length;
       const city = location.split(' ').shift();
       return { city, number };
     });
@@ -50,6 +51,7 @@ class App extends Component {
   };
 
   handleChange = (event) => {
+    this.updateEvents(this.state.locations, event.target.value);
     if (event.target.value <= 32 && event.target.value >= 1) {
       this.setState({
         numberOfEvents: event.target.value,
