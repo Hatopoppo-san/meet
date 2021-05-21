@@ -21,6 +21,7 @@ class App extends Component {
   state = {
     events: [],
     locations: [],
+    location: 'all',
     numberOfEvents: 32,
     errorText: '',
   };
@@ -40,6 +41,12 @@ class App extends Component {
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       eventCount = this.state.numberOfEvents;
+      // First aid needs refactoring
+      if (location !== this.state.location) {
+        this.setState({
+          location,
+        });
+      }
       const locationEvents =
         location === 'all'
           ? events
@@ -51,7 +58,7 @@ class App extends Component {
   };
 
   handleChange = (event) => {
-    this.updateEvents(this.state.locations, event.target.value);
+    this.updateEvents(this.state.location, event.target.value);
     if (event.target.value <= 32 && event.target.value >= 1) {
       this.setState({
         numberOfEvents: event.target.value,

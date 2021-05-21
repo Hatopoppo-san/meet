@@ -1,4 +1,3 @@
-import { setCustomData } from 'atatus-spa';
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
@@ -6,23 +5,33 @@ const EventGenre = ({ events }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    setData(() => getData());
-  }, [events]);
-
-  const getData = () => {
-    const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
-    const data = genres
-      .map((genre) => {
+    const getData = () => {
+      const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'Angular'];
+      // const data = genres
+      //   .map((genre) => {
+      //     const value = events.filter(({ summary }) => {
+      //       return summary.toLowerCase().includes(genre.toLowerCase());
+      //     }).length;
+      //     if (value > 0) {
+      //       return { name: genre, value };
+      //     } else {
+      //       return null;
+      //     }
+      //   })
+      //   .filter((element) => element);
+      const data = genres.reduce((matchedGenres, genre) => {
         const value = events.filter(({ summary }) => {
           return summary.toLowerCase().includes(genre.toLowerCase());
         }).length;
         if (value > 0) {
-          return { name: genre, value };
+          matchedGenres.push({ name: genre, value });
         }
-      })
-      .filter((element) => element);
-    return data;
-  };
+        return matchedGenres;
+      }, []);
+      return data;
+    };
+    setData(() => getData());
+  }, [events]);
 
   const colors = ['#003f5c', '#58508d', '#bc5090', '#ff6361', '#ffa600'];
 
